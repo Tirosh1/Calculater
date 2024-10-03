@@ -1,3 +1,5 @@
+console.log('JavaScript code is being executed');
+
 let display = document.querySelector('.display');
 let buttons = document.querySelectorAll('.button');
 let currentNumber = '';
@@ -11,6 +13,7 @@ let normalButtons = document.querySelectorAll('.normal-button');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
+        console.log('Button clicked');
         let value = button.dataset.num;
         if (value === '=') {
             calculateResult();
@@ -31,6 +34,7 @@ buttons.forEach(button => {
 
 normalButtons.forEach(button => {
     button.addEventListener('click', () => {
+        console.log('Normal button clicked');
         let value = button.dataset.num;
         if (value === '=') {
             calculateNormalResult();
@@ -46,6 +50,7 @@ normalButtons.forEach(button => {
 });
 
 function calculateResult() {
+    console.log('Calculating result');
     let result = 0;
     switch (operation) {
         case '+':
@@ -70,12 +75,14 @@ function calculateResult() {
 }
 
 function mathNotesFunction() {
+    console.log('Math notes function called');
     let mathNotesInput = prompt('Enter a mathematical expression');
     let result = eval(mathNotesInput);
     alert(result);
-}
+ }
 
 function switchModeFunction() {
+    console.log('Switch mode function called');
     if (normalCalculator.style.display === 'none') {
         normalCalculator.style.display = 'block';
         document.querySelector('.calculator').style.display = 'none';
@@ -86,6 +93,7 @@ function switchModeFunction() {
 }
 
 function calculateNormalResult() {
+    console.log('Calculating normal result');
     let result = 0;
     switch (operation) {
         case '+':
